@@ -2,20 +2,15 @@ package com.openclassrooms.magicgithub.api;
 
 import com.openclassrooms.magicgithub.model.User;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
-import static com.openclassrooms.magicgithub.api.FakeApiServiceGenerator.FAKE_USERS;
 import static com.openclassrooms.magicgithub.api.FakeApiServiceGenerator.FAKE_USERS_RANDOM;
 import static com.openclassrooms.magicgithub.api.FakeApiServiceGenerator.generateUsers;
 
 public class FakeApiService implements ApiService {
 
-    private List<User> users = generateUsers();
+    private final List<User> users = generateUsers();
 
     /**
      * Return a list of {@link User}
@@ -32,11 +27,8 @@ public class FakeApiService implements ApiService {
      */
     @Override
     public void generateRandomUser() {
-
         Collections.shuffle(FAKE_USERS_RANDOM);
         users.add(FAKE_USERS_RANDOM.get(0));
-
-
     }
 
     /**
@@ -44,6 +36,6 @@ public class FakeApiService implements ApiService {
      */
     @Override
     public void deleteUser(User user) {
-        users.remove(0);
+        users.remove(user);
     }
 }
