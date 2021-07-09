@@ -12,7 +12,7 @@ public class UserRepository {
 
     private final ApiService apiService; // TODO: A utiliser
     private Object User;
-    private Object ArrayList;
+   
 
     public UserRepository(ApiService apiService) {
         this.apiService = apiService;
@@ -20,23 +20,17 @@ public class UserRepository {
 
     public List<User> getUsers() {
        return apiService.getUsers();
-
-
     }
 
 
     public void generateRandomUser() {
         apiService.generateRandomUser();
-
-
     }
 
 
 
     public void deleteUser(User user) {
         apiService.deleteUser(user);
-
-
     }
 
 
